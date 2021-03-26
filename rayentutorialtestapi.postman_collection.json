@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "abea360c-e3ed-4095-9416-897836d3677d",
+		"name": "rayentutorialtestapi",
+		"description": "Api de prueba para laboratoria y ejemplo de lista de tutoriales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "tutorials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://rayentutorialtestapp.azurewebsites.net/tutorials",
+				"description": "Obtiene todos los tutoriales"
+			},
+			"response": []
+		},
+		{
+			"name": "tutorial by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://rayentutorialtestapp.azurewebsites.net/tutorials/1",
+				"description": "Obtiene el tutorial que corresponde al id"
+			},
+			"response": []
+		},
+		{
+			"name": "tutorials by description",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://rayentutorialtestapp.azurewebsites.net/tutorial?description=los",
+					"protocol": "https",
+					"host": [
+						"rayentutorialtestapp",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"tutorial"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "los"
+						}
+					]
+				},
+				"description": "Obtiene los tutoriales que contienen parte de la descripción recibida"
+			},
+			"response": []
+		},
+		{
+			"name": "https://rayentutorialtestapp.azurewebsites.net/createtutorial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Curso avanzado React\", \r\n    \"profesor\": \"Charlie Market\",\r\n    \"materia\": \"Programación\",\r\n    \"fecha\": \"2020-09-19 12:59:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rayentutorialtestapp.azurewebsites.net/createtutorial",
+				"description": "Crea un nuevo tutorial\r\n{\r\n    \"nombre\": nombre, \r\n    \"profesor\": profesor,\r\n    \"materia\": materia,\r\n    \"fecha\": fecha\r\n}\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "updatetutorial",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Curso avanzado React\", \r\n    \"profesor\": \"Charlie Market\",\r\n    \"materia\": \"Teleconsulta\",\r\n    \"fecha\": \"2020-09-19 12:59:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://rayentutorialtestapp.azurewebsites.net/updatetutorial/2",
+				"description": "Actualiza el tutorial que corresponde al id entregado\r\n{\r\n    \"nombre\": \"Curso avanzado React\", \r\n    \"profesor\": \"Charlie Market\",\r\n    \"materia\": \"Teleconsulta\",\r\n    \"fecha\": \"2020-09-19 12:59:00\"\r\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "deletetutorial",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://rayentutorialtestapp.azurewebsites.net/deletetutorial/2",
+				"description": "Se borra el tutorial indicado por el id recibido"
+			},
+			"response": []
+		},
+		{
+			"name": "deletetutorials",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://rayentutorialtestapp.azurewebsites.net/deletetutorials",
+				"description": "Borra todos los tutoriales"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
